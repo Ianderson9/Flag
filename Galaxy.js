@@ -32,6 +32,9 @@ function Galaxy(x, y, r) {
       this.zoom = lerp(this.zoom, 1, .4);
     }
     this.angle += -this.draggers[0].vel.x / 400;
+    if (this.draggers[0].vel.x == 0) {
+      this.angle += .0005;
+    }
     reef.expandBy(this.draggers[0].vel.x / 100);
     this.show();
     for (var i = 0; i < this.draggers.length; i++) {

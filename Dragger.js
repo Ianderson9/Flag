@@ -50,7 +50,7 @@ function Dragger(x, y, r) {
   }
 
   this.move = function() {
-    dragMag = 0.1;
+    dragMag = 0.05;
     var dragForce = this.vel.copy();
     dragForce.mult(-1);
     dragForce.normalize();
@@ -60,7 +60,7 @@ function Dragger(x, y, r) {
       dragForce.mult(0);
     }
     this.vel.add(dragForce);
-    this.vel.limit(50);
+    this.vel.limit(100);
     this.value.add(this.vel);
     if (this.value.mag() > this.maxR / 2) {
       this.value.set(0, 0);
